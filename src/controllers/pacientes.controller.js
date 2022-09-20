@@ -3,7 +3,7 @@ module.exports ={
         try {
             console.log("mostrando info del paciente")         
             res.json({
-                message: "Soy paciente" + req.params.idPaciente
+                message: "Soy paciente: " + req.params.idPaciente
             })
         } catch (error) {
             console.log(error)
@@ -18,5 +18,5 @@ module.exports ={
         } catch (error) {
             console.log(error)
         }
-    },
+    }
 }
