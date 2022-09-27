@@ -7,8 +7,10 @@ http.createServer(function(request,response){
 console.log('servidor en la url http://127.0.0.1:5000');*/
 const expr= require("express");
 const routerConfig = require('./routes/index.routes')
-const constantes= require('../src/const/globalConstants');
-const globalConstants = require("../src/const/globalConstants");
+const constantes= require('./const/globalConstants');
+const globalConstants = require('./const/globalConstants');
+let errorHandler = require('./midllewares/error')
+let createError = require('http-errors')
 
 const configuracionApi = (app) =>{  //configurar la api
     app.use(expr.json())         //para q la api pueda recibir json
@@ -18,7 +20,12 @@ const configuracionApi = (app) =>{  //configurar la api
 
 const configuracionRouter = (app) =>{  //config rutas
     app.use('/api/', routerConfig.rutas_init())  //para acceder a las rutas de la api siempre deberá empezar con /api/
-    
+
+    app.use(function(req,res,next){
+        next(createError(404))
+    })
+
+    app.use(errorHandler)    
 };
 
 const init = () =>{
