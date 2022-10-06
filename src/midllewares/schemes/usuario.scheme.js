@@ -1,15 +1,13 @@
 const Joi = require("Joi")  //importa joi para validar datos de entrada
 
-let crearMedico= Joi.object({
+let crearUsuario= Joi.object({
     nombre: Joi.string().required(),
-    apellido: Joi.string().required(),
-    especialidad: Joi.string().required(),
+    apellido: Joi.string().required(),    
     email: Joi.string().optional(),
-    celular: Joi.number().optional
-
+    password: Joi.string().required()
 })
 
 module.exports ={
-    crearMedico
+    crearUsuario
 }
 

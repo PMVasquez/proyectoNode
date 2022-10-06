@@ -22,5 +22,29 @@ module.exports={
     'errorCrearPaciente':{
         code:1006,
         message: 'Error al crear el peciente'  
+    },
+    'usuarioInexistente':{
+        code:1007,
+        message: 'El usuario no existe' 
+    },
+    'sinUsuarios':{
+        code:1008,
+        message: 'No existen usuarios en la base de datos' 
+    },
+    'errorCrearUsuario':{
+        code:1009,
+        message: 'Error al crear el usuario' 
+    },    
+    'errorLogueoInvalido':{
+        code:1010,
+        message: 'El usuario o la contraseña son incorrectos' 
+    },    
+    'sesionExpirada':{
+        code:1011,
+        message: 'Su sesión a expirado.' 
+    },
+    'usuarioNoHabilitado':{
+        code:1012,
+        message: 'El usuario no está habilitado.' 
     }
 }

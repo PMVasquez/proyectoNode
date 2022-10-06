@@ -19,6 +19,7 @@ const configuracionApi = (app) =>{  //configurar la api
 };
 
 const configuracionRouter = (app) =>{  //config rutas
+    app.use('/',routerConfig.rutas_auth())
     app.use('/api/', routerConfig.rutas_init())  //para acceder a las rutas de la api siempre deberá empezar con /api/
 
     app.use(function(req,res,next){
